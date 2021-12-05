@@ -1,0 +1,9 @@
+git init -> Inicializar git en una carpeta.
+git status -> Ver el estado del git.
+git add . -> Agrega todos los archivos al git.
+git commit -m "mensaje..." -> Guarda los cambios en el repositorio.
+git branch -M main
+git add archivoeliminado.txt -> Elimina del git un archivo anteriormente eliminado.
+
+git remote add origin https://github.com/marchosgomez/daw -> Enlaza el git local con el gitHub en la web.
+git push -u origin master -> Envía los ficheros del git al gitHub.
