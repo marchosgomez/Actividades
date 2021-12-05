@@ -1,0 +1,10 @@
+PostgreSQL
+	localhost
+	5432
+	openpg
+	openpgwd
+	Database name:	odooDB
+
+Odoo
+	Email: odoo@hotmail.com
+	18041972

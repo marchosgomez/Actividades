@@ -1,0 +1,29 @@
+Tipos de Layout:
+	LinearLayout -> Posicionamiento horizontal o vertical
+	RelativeLayout -> Posicionamiento relativa a otros elementos
+	ConstraintLayout -> Posicionamiento basado en restricciones
+Cambio de Layout:
+	En activity_main.xml:
+	<LinearLayout xmlns:...
+	</LinearLayout>
+
+	<RelativeLayout xmlns:...
+	</RelativeLayout>
+
+	<android.support.constraint.ConstraintLayout xmlns:...
+	</android.support.constraint.ConstraintLayout> 
+Tamaño de elementos:
+	match_parent -> Amplia su espacio hasta rellenar el contenedor padre.
+	wrap_content -> Reduce el espacio en base a su contenido.
+Escala de elementos:
+	dp -> Densidad de pixeles independientes (para elementos)
+	sp -> Escala de pixeles independientes (para fuentes)
+Referencia a nombres de elementos:
+	@+id/....
+Relacionar activity_main con MainActivity en activity_main.xml:
+	tools:context=".MainActivity">
+Colocar propiedades en cada elemento:
+	android:text=...
+Colocar contenido en cada propiedad:
+	...text="@android:..."
+	...style="@style/..."

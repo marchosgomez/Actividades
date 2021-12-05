@@ -1,0 +1,139 @@
+    fun main (args: Array<String>) {
+    
+        println (args [0])
+        
+        // Constantes
+        val PI = 3.14
+
+        // Variables
+        var valor1: Int = 13
+        var valor2: String = "13"
+        var caracter: Char = 'a'
+        println (valor1 + PI)
+        println (valor2 + PI)
+        println (caracter)
+
+        // Convertir variables
+        var caracterAInt: Int = caracter.code
+        println (caracterAInt)
+
+        // Cadenas
+        var cadena1: String = "Marcos"
+        var cadena2: String = """ Gómez
+           Alonso"""
+        println (cadena1 + cadena2)
+        // Mostrar el valor de las variables en una cadena
+        println ("Mi nombre es $cadena1 y tengo ${cadena2.length} ${'€'}")
+
+        // Arrays
+        var arreglo1: Array<Int> = arrayOf (1,2,3)
+        var arreglo2 = intArrayOf (1,2,3)
+        println (arreglo1 [2] + arreglo2 [1])
+
+        // Definir variables Any que cambian su tipo segun su contenido
+        var cualquierValor: Any
+        cualquierValor = "Nuevo valor"
+        println (cualquierValor)
+        cualquierValor = 25
+        println (cualquierValor)
+
+        // Operaciones de comparación
+        var datoBooleano = ((valor1 != valor2.toInt()) && (valor1 == valor2.toInt()) || (valor1 <= valor2.toInt()))
+        println (datoBooleano)
+
+        // if
+        var resultado = if (valor1 > valor2.toInt()) "valor1" else if (valor1 < valor2.toInt()) "valor2" else "iguales"
+        println ("El número mayor es $resultado")
+
+        // when
+        when (resultado) {
+            "valor1", "valor2" -> { println ("distintos") }
+            "iguales" -> println ("iguales")
+            //in 1..5 -> println ("otros")
+            //resultado => 1 -> println ("mayores")
+            else -> println ("ninguno")
+        }
+
+        // for
+        for (i in 3..9) print (i)
+        for ((indice, valor) in (3..5).withIndex()) println ("$indice -> $valor")
+
+        // while
+        while ((valor1) >= 10) {
+            println (valor1)
+            break
+        }
+
+        // do
+        do {
+            println (valor2)
+        } while (cualquierValor == "Nuevo valor")
+
+        // Funciones
+        var resultadoSuma = suma (10, 8)
+        println (resultadoSuma)
+
+        // Clase Math
+        val cosenoUno = Math.cos (1.0)
+        println (cosenoUno)
+
+        // Clases
+        var manzana = Frutas ("Rojo", "Dulce", 4)
+        println (manzana.pudrirse())
+        
+        // Herencia de clases
+        var aguacate = FrutasconGrasa ("verde", 5)
+        println (aguacate.color)
+    }
+    
+    
+
+    // Funciones
+    fun suma (a:Int, b:Int): Int {
+        return a+b
+    }
+
+    // Clases
+    open class Frutas () {
+    // open class Frutas (color: String, sabor: String, precio: Int) {
+
+        // Atributos
+        var color: String = ""
+        var sabor: String = ""
+        var precio: Int = 0
+
+        // Iniciador
+        init{
+            this.color = "Rojo"
+            this.sabor = sabor
+            this.precio = precio
+        }
+
+        // Constructores
+        constructor (color: String, sabor: String, precio: Int): this () {
+            this.color = color
+            this.sabor = sabor
+            this.precio = precio
+        }
+
+        constructor (color: String): this () {
+            this.color = color
+        }
+
+        // Métodos
+        fun pudrirse () {
+            println ("La fruta se está pudriendo.")
+        }
+    }
+
+    // Herencia de clases con "open" en la clase padre
+    class FrutasconGrasa (): Frutas () {
+        var cantidadGrasa: Int = 0
+
+        constructor (color: String, grasa: Int): this () {
+            super.color = color
+            super.sabor = "Amargo"
+            super.precio = 9
+            this.cantidadGrasa = grasa
+        }
+    }
